@@ -15,10 +15,9 @@ export default  function Consults(props) {
                         Hora: {props.time}
                     </h4>
                     <h4>
-                        Objetivos: {props.objectives}
+                        Resumo: {props.objectives}
                     </h4>
-                
-            </div>  
-        </div>
+            </div>
+        </div>  
     )
 }
