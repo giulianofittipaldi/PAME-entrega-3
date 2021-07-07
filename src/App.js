@@ -1,39 +1,38 @@
 import "./App.css"
 import Header from "./components/Header/index"
-import Prescriptions from "./components/Prescriptions/index"
-import Pacient from "./components/Pacient/index"
+import Card from "./components/Card/index"
 function App() {
+  const paciente1={
+    name:"Giuliano",
+    age:21,
+    pression1:30,
+    pression2:80,
+    temperatura:36,
+    description:"Dipirona monohidratada, de 4/4h. Tomar em jejum",
+    consultId:"001",
+    data:"08/07",
+    time:"10:00",
+    objectives:"Revisão Geral"
+  }
   return (
     <>
       <Header/>
       <div className = "main">
-        <h2 className="aba">Pacientes</h2>
+      <button className="botaoAdicionar">Adicionar Paciente</button>
+      <button className="botaoAdicionar">Agendar consulta</button>
+      <div className="topicos">
+        <h2 id="abaPacientes">Pacientes</h2>
+        <h2 id="abaReceitas">Receita</h2>
+        <h2 id="abaConsultas">Consultas</h2>
+      </div>
         <div className="componentes">
-          <div className="pacientes">
-            <Pacient
-              name1="Giuliano"
-              age1={21}
-              pression1_1={30}
-              pression1_2={90}
-              temperature1={36}
-              prescription1="Dipirona 3/3h"
-            />
-
-            <Pacient
-              name1="Giuliano"
-              age1={21}
-              pression1_1={30}
-              pression1_2={90}
-              temperature1={36}
-              prescription1="Dipirona 3/3h"
-            />
-          </div>
-          <Prescriptions
-            
-          />
-          </div>
+          
+            <Card pacients={paciente1}/>
+            <Card pacients={paciente1}/>
+            <Card pacients={paciente1}/>
+          
         </div>
-      
+      </div>
     </>
   );
 }
