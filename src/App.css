@@ -1,0 +1,11 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+.main{
+  width: 75%;
+  height: 50px auto;
+  display: flex;
+  justify-content: space-between;
+}
