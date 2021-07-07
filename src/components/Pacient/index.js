@@ -3,7 +3,6 @@ export default function Pacient(props) {
     return (
         
             <div className="paciente">
-                
                     <h4>
                         Nome: {props.name}
                     </h4>
@@ -16,7 +15,6 @@ export default function Pacient(props) {
                     <h4>
                         Temperatura: {props.temperature} °C
                     </h4>
-                
             </div>
         
     )
