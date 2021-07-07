@@ -1,23 +1,39 @@
 import "./App.css"
 import Header from "./components/Header/index"
-import Medicines from "./components/Medicines"
+import Prescriptions from "./components/Prescriptions/index"
 import Pacient from "./components/Pacient/index"
 function App() {
   return (
     <>
       <Header/>
       <div className = "main">
-        <Pacient
-          nome="Giuliano"
-          idade={21}
-          sangue="a+"
-        />
-        <Medicines
-          medicamento1={{nome: "Dipirona", horario: "10:00"}}
-          medicamento2={{nome: "Dorflex", horario: "10:00"}}
-          medicamento3={{nome: "ibuprofeno", horario: "10:00"}}
+        <h2 className="aba">Pacientes</h2>
+        <div className="componentes">
+          <div className="pacientes">
+            <Pacient
+              name1="Giuliano"
+              age1={21}
+              pression1_1={30}
+              pression1_2={90}
+              temperature1={36}
+              prescription1="Dipirona 3/3h"
+            />
+
+            <Pacient
+              name1="Giuliano"
+              age1={21}
+              pression1_1={30}
+              pression1_2={90}
+              temperature1={36}
+              prescription1="Dipirona 3/3h"
+            />
+          </div>
+          <Prescriptions
+            
           />
-      </div>
+          </div>
+        </div>
+      
     </>
   );
 }
