@@ -4,6 +4,10 @@ import Card from "./components/Card/index"
 import users from '/Users/giulianofittipaldi/Fluxo/PAME-entrega-3/src/images/users.svg'
 import book from '/Users/giulianofittipaldi/Fluxo/PAME-entrega-3/src/images/book.svg'
 import calendar from '/Users/giulianofittipaldi/Fluxo/PAME-entrega-3/src/images/calendar.svg'
+import Modal1 from "./components/Modal1"
+import Modal2 from "./components/Modal2"
+import { useState } from "react"
+
 function App() {
   const paciente1={
     name:"Giuliano",
@@ -27,7 +31,7 @@ function App() {
     consultId:"002",
     data:"10/07",
     time:"18:00",
-    objectives:"Exame de faringe"
+    objectives:"Check-up mensal"
   }
   const paciente3={
     name:"André",
@@ -41,12 +45,18 @@ function App() {
     time:"12:00",
     objectives:"Acompanhamento da doença"
   }
+
+  const [openModal1, setOpenModal1] = useState(false);
+  const [openModal2, setOpenModal2] = useState(false);
   return (
     <>
       <Header/>
       <div className = "main">
-      <button className="botaoAdicionar" >Adicionar Paciente</button>
-      <button className="botaoAdicionar">Agendar consulta</button>
+      {openModal1 && <Modal1 closeModal1 = {setOpenModal1}/>}
+      {openModal2 && <Modal2 closeModal2 = {setOpenModal2}/>}
+      <button className="botaoAdicionar" onClick={()=> {setOpenModal1(true);}}
+        >Adicionar Paciente</button>
+      <button className="botaoAdicionar" onClick={()=> {setOpenModal2(true);}}>Agendar consulta</button>
       <div className="topicos">
         <h2 id="abaPacientes">
           <img className="icons" src={users}/>
